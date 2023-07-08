@@ -3,7 +3,7 @@ import pandas as pd
 
 app = FastAPI()
 
-df = pd.read_csv(r"C:\Users\USER\Desktop\SoyHenry\Proyectos\ML OPS\movies_modificado.csv")
+df = pd.read_csv("movies_modificado.csv")
 
 @app.get('/')
 def read_root():
