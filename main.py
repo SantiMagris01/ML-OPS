@@ -1,6 +1,5 @@
 from fastapi import FastAPI
 import pandas as pd
-import numpy as np
 
 app = FastAPI()
 
@@ -26,19 +25,16 @@ def peliculas_duracion(pelicula: str):
         duracion = pelicula_filtrada['runtime'].values[0]
         anio = pelicula_filtrada['release_year'].values[0]
 
-        duracion = int(duracion) if not np.isnan(duracion) else None
-        anio = int(anio) if not np.isnan(anio) else None
-
         respuesta = {
-            'pelicula': pelicula,
-            'duracion': duracion,
-            'anio': anio
+            'Pelicula': pelicula,
+            'Duración': duracion,
+            'Año': anio
         }
     else:
         respuesta = {
-            'pelicula': pelicula,
-            'duracion': None,
-            'anio': None
+            'Pelicula': pelicula,
+            'Duración': None,
+            'Año': None
         }
 
     return respuesta
